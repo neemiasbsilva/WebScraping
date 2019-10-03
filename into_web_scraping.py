@@ -38,6 +38,6 @@ def main():
 
     df = pd.DataFrame({"Product names":product_names,"Brands":brands, "Shippings":shippings})
     print(df.head())
-
+    df.to_csv("Graphics_cards_new_egg.csv")
 if __name__ == '__main__':
     main()
