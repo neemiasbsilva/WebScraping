@@ -19,7 +19,9 @@ def main():
     containers = page_soup.findAll("div", {"class": "item-container"})
     # how many objects find
     print(len(containers))
-    
+    product_names = list()
+    brands = list()
+    shippings = list()
     for container in containers:
         brand = container.a.img["title"]
         title_container = container.findAll("a", {"class": "item-title"})
@@ -27,11 +29,15 @@ def main():
         shipping_container = container.findAll("li", {"class": "price-ship"})
         shipping = shipping_container[0].text.strip()
 
-        print("brand: "+brand)
-        print("product_name: "+product_name)
-        print("shipping: "+ shipping)
+        # print("brand: "+brand)
+        # print("product_name: "+product_name)
+        # print("shipping: "+ shipping)
+        product_names.append(product_name)
+        brands.append(brand)
+        shippings.append(shipping)
 
-
+    df = pd.DataFrame({"Product names":product_names,"Brands":brands, "Shippings":shippings})
+    print(df.head())
 
 if __name__ == '__main__':
     main()
