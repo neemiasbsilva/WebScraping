@@ -18,4 +18,5 @@ For run the files of this repository you need install some librarys:
 - Pandas;
 
 #
-###### Neemias B. Silva
+    Sincerely Neemias B. Silva
+#
