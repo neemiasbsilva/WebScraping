@@ -32,7 +32,7 @@ def main():
         # print("brand: "+brand)
         # print("product_name: "+product_name)
         # print("shipping: "+ shipping)
-        product_names.append(product_name)
+        product_names.append(product_name.replace(",", "|"))
         brands.append(brand)
         shippings.append(shipping)
 
