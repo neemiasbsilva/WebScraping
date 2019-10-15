@@ -6,7 +6,10 @@ def main():
     my_url = 'https://www.newegg.com/Video-Cards-Video-Devices/Category/ID-38?Tpk=Graphics%20Card'
 
     # opening up connection, grabbing the page
-    uClient = uReq(my_url)
+    try:
+        uClient = uReq(my_url)
+    except HTTPError as e:
+        print(e)
     page_html = uClient.read()
     uClient.close()
 
